@@ -15,6 +15,7 @@
 
         <p>
             <span th:each="column : ${columns}">
+
                 <input
                         type="radio"
                         name="searchType"
@@ -36,10 +37,13 @@
 
     <hr />
 
-
     <!-- TODO #2 - Loop over jobs map to display all job fields -->
 
     <table>
+
+        <h3 th:text="${count} + ' Result(s)'"></h3>
+
+
         <tr>
             <th>Name</th>
             <th>Employer</th>
@@ -47,6 +51,7 @@
             <th>Position Type</th>
             <th>Core Competency</th>
         </tr>
+
 
         <tr th:each="job : ${jobs}">
 

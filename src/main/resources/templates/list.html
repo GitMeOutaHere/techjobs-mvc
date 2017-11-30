@@ -7,17 +7,13 @@
     <div th:replace="fragments :: page-header"></div>
 
     <div class="container body-content">
+
         <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
         <h2>View All</h2>
 
-        <!--table>
-            <tr>
-                <th>Name</th>
-                <th>Employer</th>
-                <th>Location</th>
-                <th>Position Type</th>
-                <th>Core Competency</th>
-            </tr>
+
+        <table>
+
 
             <tr th:each="job : ${jobs}">
 
@@ -25,14 +21,32 @@
 
                 </td>
 
-
             </tr>
-        </table-->
+
+        </table>
+        <!--h3 th:text="${count} + ' Results(s)'"></h3>
+
+        <tr>
+            <th>Name</th>
+            <th>Employer</th>
+            <th>Location</th>
+            <th>Position Type</th>
+            <th>Core Competency</th>
+        </tr-->
+        <!--h3 th:text="${count} + ' Results(s)'"></h3-->
+        <!--h3 th:text="${jobs.size() + ' Result(s)'}"></h3-->
         <ul>
+
             <li th:each="column : ${columns}">
+
+
                 <a th:href="@{/list/values(column=${column.key})}" th:text="${column.value}"></a>
             </li>
+
+
         </ul>
+
+
     </div>
 
 </body>
